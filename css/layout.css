@@ -1,0 +1,116 @@
+/* ======================
+   БАЗОВАЯ СЕТКА И СЕКЦИИ
+   ====================== */
+
+/* Секции */
+section {
+    padding: 4rem 1rem;
+}
+
+.hero {
+    min-height: calc(100vh - var(--header-height));
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Hero с фоном (будем настраивать позже) */
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, var(--primary-light) 0%, transparent 70%);
+    opacity: 0.1;
+    z-index: -1;
+}
+
+.hero__content {
+    max-width: 600px;
+}
+
+.hero__buttons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+}
+
+/* Навигация (базовые стили) */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: var(--header-height);
+    background-color: var(--bg-primary);
+    box-shadow: var(--shadow-sm);
+    z-index: 1000;
+    transition: background-color var(--transition-normal);
+}
+
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 1rem;
+    max-width: var(--container-width);
+    margin: 0 auto;
+}
+
+.nav__logo {
+    font-weight: 700;
+    font-size: 1.25rem;
+    color: var(--primary-color);
+}
+
+.nav__menu {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav__menu a {
+    color: var(--text-primary);
+    font-weight: 500;
+}
+
+.nav__menu a:hover {
+    color: var(--primary-color);
+}
+
+.nav__toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-primary);
+    cursor: pointer;
+}
+
+/* Адаптивность навигации */
+@media (max-width: 768px) {
+    .nav__menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: var(--bg-primary);
+        flex-direction: column;
+        padding: 1rem;
+        box-shadow: var(--shadow-md);
+    }
+    
+    .nav__menu.active {
+        display: flex;
+    }
+    
+    .nav__toggle {
+        display: block;
+    }
+}

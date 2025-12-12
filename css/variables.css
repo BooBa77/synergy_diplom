@@ -1,0 +1,71 @@
+/* ======================
+   CSS-ПЕРЕМЕННЫЕ ДЛЯ ТЕМ
+   ====================== */
+
+/* Светлая тема (по умолчанию) */
+:root {
+    /* Цветовая палитра */
+    --primary-color: #2563eb;      /* Синий основной */
+    --primary-dark: #1d4ed8;       /* Синий темный */
+    --primary-light: #60a5fa;      /* Синий светлый */
+    
+    --secondary-color: #7c3aed;    /* Фиолетовый */
+    --accent-color: #059669;       /* Зеленый акцентный */
+    
+    /* Фоны */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8fafc;
+    --bg-tertiary: #f1f5f9;
+    
+    /* Текст */
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --text-tertiary: #94a3b8;
+    
+    /* Границы */
+    --border-color: #e2e8f0;
+    --border-radius: 8px;
+    
+    /* Тени */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    
+    /* Размеры */
+    --container-width: 1200px;
+    --header-height: 70px;
+    
+    /* Анимации */
+    --transition-fast: 150ms ease;
+    --transition-normal: 300ms ease;
+    --transition-slow: 500ms ease;
+}
+
+/* Темная тема */
+[data-theme="dark"] {
+    /* Цветовая палитра (те же оттенки, но инвертированные) */
+    --primary-color: #3b82f6;      /* Более яркий синий для темного фона */
+    --primary-dark: #60a5fa;
+    --primary-light: #93c5fd;
+    
+    --secondary-color: #8b5cf6;
+    --accent-color: #10b981;
+    
+    /* Фоны */
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-tertiary: #334155;
+    
+    /* Текст */
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --text-tertiary: #94a3b8;
+    
+    /* Границы */
+    --border-color: #475569;
+    
+    /* Тени (более мягкие для темной темы) */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+}

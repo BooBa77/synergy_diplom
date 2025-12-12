@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Иванов Иван - Frontend-разработчик | Портфолио</title>
+    <meta name="description" content="Портфолио начинающего frontend-разработчика. Адаптивная вёрстка, JavaScript, современные технологии.">
+    
+    <!-- Предзагрузка шрифтов (позже добавим) -->
+    <!-- <link rel="preconnect" href="https://fonts.googleapis.com"> -->
+    
+    <!-- Фавикон (создадим позже) -->
+    <!-- <link rel="icon" type="image/x-icon" href="/images/favicon.ico"> -->
+    
+    <!-- CSS файлы (структура по вашему выбору) -->
+    <link rel="stylesheet" href="css/main.css">
+    
+    <!-- Для иконок (рекомендую Font Awesome через CDN) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+</head>
+<body>
+    <!-- Навигация -->
+    <header class="header">
+        <nav class="nav">
+            <div class="nav__logo">Иван Иванов</div>
+            <ul class="nav__menu">
+                <li><a href="#home">Главная</a></li>
+                <li><a href="#about">Обо мне</a></li>
+                <li><a href="#projects">Проекты</a></li>
+                <li><a href="#contact">Контакты</a></li>
+            </ul>
+            <button class="nav__toggle" aria-label="Меню">
+                <i class="fas fa-bars"></i>
+            </button>
+            <button class="theme-toggle" aria-label="Переключить тему">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero-секция -->
+    <section id="home" class="hero">
+        <div class="hero__content">
+            <h1 class="hero__title">
+                Здравствуйте, я <span class="highlight">Иванов Иван</span>
+            </h1>
+            <h2 class="hero__subtitle">
+                Начинающий frontend-разработчик
+            </h2>
+            <p class="hero__description">
+                Создаю современные, адаптивные веб-интерфейсы.
+                Учусь каждый день, чтобы стать профессионалом.
+            </p>
+            <div class="hero__buttons">
+                <a href="#projects" class="btn btn--primary">Смотреть проекты</a>
+                <a href="#contact" class="btn btn--secondary">Связаться со мной</a>
+            </div>
+        </div>
+        
+        <!-- Будет добавлено позже -->
+        <!-- <div class="hero__image">
+            <img src="images/avatar.jpg" alt="Фото Ивана Иванова">
+        </div> -->
+    </section>
+
+    <!-- Обо мне (заглушка) -->
+    <section id="about" class="about">
+        <h2 class="section-title">Обо мне</h2>
+        <!-- Контент добавим позже -->
+    </section>
+
+    <!-- Проекты (заглушка) -->
+    <section id="projects" class="projects">
+        <h2 class="section-title">Мои проекты</h2>
+        <!-- Карточки проектов добавим позже -->
+    </section>
+
+    <!-- Контакты (заглушка) -->
+    <section id="contact" class="contact">
+        <h2 class="section-title">Контакты</h2>
+        <!-- Форма и контакты добавим позже -->
+    </section>
+
+    <!-- Футер -->
+    <footer class="footer">
+        <p>&copy; 2023 Иванов Иван. Все права защищены.</p>
+        <div class="footer__social">
+            <!-- Иконки соцсетей добавим позже -->
+        </div>
+    </footer>
+
+    <!-- JavaScript файлы -->
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>

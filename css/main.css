@@ -1,0 +1,21 @@
+/* ======================
+   ГЛАВНЫЙ CSS ФАЙЛ
+   Импорт всех стилей
+   ====================== */
+
+/* 1. Сброс стилей */
+@import url('reset.css');
+
+/* 2. CSS-переменные (самый первый после reset!) */
+@import url('variables.css');
+
+/* 3. Базовые стили */
+@import url('base.css');
+
+/* 4. Компоненты (добавим позже) */
+/* @import url('components/header.css'); */
+/* @import url('components/hero.css'); */
+@import url('components/header.css');
+
+/* 5. Сетка и расположение */
+@import url('layout.css');

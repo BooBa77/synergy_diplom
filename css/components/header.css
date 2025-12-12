@@ -1,0 +1,74 @@
+/* ======================
+   ПЕРЕКЛЮЧАТЕЛЬ ТЕМ
+   ====================== */
+
+.theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-primary);
+    background-color: var(--bg-secondary);
+    transition: all var(--transition-fast);
+    margin-left: 1rem;
+}
+
+.theme-toggle:hover {
+    background-color: var(--bg-tertiary);
+    transform: scale(1.05);
+}
+
+.theme-toggle:active {
+    transform: scale(0.95);
+}
+
+.theme-toggle__icon {
+    position: relative;
+    width: 20px;
+    height: 20px;
+}
+
+.theme-toggle__icon i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity var(--transition-fast), transform var(--transition-fast);
+}
+
+.theme-toggle__icon .fa-sun {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(90deg);
+}
+
+[data-theme="dark"] .theme-toggle__icon .fa-moon {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+[data-theme="dark"] .theme-toggle__icon .fa-sun {
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(0);
+}
+
+/* Активная ссылка в навигации */
+.nav__menu a.active {
+    color: var(--primary-color);
+    position: relative;
+}
+
+.nav__menu a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    border-radius: 1px;
+}
