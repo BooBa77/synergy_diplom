@@ -6,6 +6,7 @@
 // Импорты 
 import ThemeSwitcher from './theme-switcher.js';
 import MobileMenu from './mobile-menu.js';
+import ProjectsSwitcher from './projects-switcher.js';
 
 // Инициализация при полной загрузке DOM
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Инициализируем компоненты
     const themeSwitcher = new ThemeSwitcher();
     const mobileMenu = new MobileMenu();
+    const projectsSwitcher = new ProjectsSwitcher();
     
     // Плавный скролл для якорных ссылок
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {

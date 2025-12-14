@@ -1,0 +1,61 @@
+/* --- Стили для переключателя проектов (Tabs) --- */
+
+.project-switcher {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #eee; /* Линия под вкладками */
+}
+
+/* Скрываем стандартные радио-кнопки */
+.project-switcher input[type="radio"] {
+    display: none;
+}
+
+/* Стилизуем Лэйблы как кнопки/вкладки */
+.project-switcher label {
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 8px 8px 0 0;
+    background-color: #f0f0f0;
+    border: 1px solid #ddd;
+    border-bottom: none;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    color: #555;
+}
+
+/* Стили для неактивных вкладок (hover) */
+.project-switcher label:hover {
+    background-color: #e0e0e0;
+}
+
+/* Стили для АКТИВНОЙ вкладки (Checked Radio) */
+.project-switcher input[type="radio"]:checked + label {
+    background-color: white; /* Цвет фона, совпадающий с фоном секции */
+    color: var(--primary-color, #007bff);
+    border-top: 3px solid var(--primary-color, #007bff); /* Выделение */
+    border-color: #ddd;
+    border-bottom: 1px solid white; /* Стираем нижнюю границу, чтобы выглядело как "внутри" контейнера */
+    margin-top: -1px; /* Немного поднимаем, чтобы граница прилипла */
+}
+
+/* Стилизация контейнеров контента */
+.project-group {
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 0 8px 8px 8px;
+    background-color: white;
+}
+
+/* Скрываем все группы по умолчанию */
+.project-group {
+    display: none;
+}
+
+/* Показываем только активную группу (та, чей input отмечен) */
+#group-ready:target,
+#group-current:target,
+#group-planned:target {
+    /* JS */
+}

@@ -64,7 +64,7 @@
         </div> -->
     </section>
 
-    <!-- Обо мне (заглушка) -->
+    <!-- Обо мне -->
     <section id="about" class="about">
         <div class="container">
             <h2 class="section-title">Обо мне</h2>
@@ -115,9 +115,48 @@
     </section>
 
     <!-- Проекты (заглушка) -->
-    <section id="projects" class="projects">
-        <h2 class="section-title">Мои проекты</h2>
-        <!-- Карточки проектов добавим позже -->
+     <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Мои проекты</h2>
+            
+            <!-- Радио-переключатель (Вкладки) -->
+            <div class="project-switcher">
+                <input type="radio" id="tab-ready" name="project_filter" value="ready" checked>
+                <label for="tab-ready">Готовые (3)</label>
+
+                <input type="radio" id="tab-current" name="project_filter" value="current">
+                <label for="tab-current">Текущие (1)</label>
+
+                <input type="radio" id="tab-planned" name="project_filter" value="planned">
+                <label for="tab-planned">Запланированные (2)</label>
+            </div>
+
+            <!-- Контейнеры для проектов -->
+            <div class="project-list-container">
+                
+                <!-- Вкладка "Готовые" -->
+                <div class="project-group" id="group-ready">
+                    <h3>Завершенные проекты</h3>
+                    <!-- Карточки готовых проектов здесь -->
+                    <p>Проект 1, Проект 2, Проект 3...</p>
+                </div>
+                
+                <!-- Вкладка "Текущие" -->
+                <div class="project-group" id="group-current">
+                    <h3>Работаю над этим</h3>
+                    <!-- Карточки текущих проектов здесь -->
+                    <p>Проект А: Разработка компонента авторизации.</p>
+                </div>
+                
+                <!-- Вкладка "Запланированные" -->
+                <div class="project-group" id="group-planned">
+                    <h3>В планах</h3>
+                    <!-- Карточки запланированных проектов здесь -->
+                    <p>Изучение WebGL, создание 3D-портфолио.</p>
+                </div>
+                
+            </div>
+        </div>
     </section>
 
     <!-- Контакты (заглушка) -->
