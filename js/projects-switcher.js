@@ -1,41 +1,63 @@
-// В вашем файле js/main.js или в конце body
+/**
+ * Класс для управления переключением вкладок (радио-кнопок) 
+ * в секции "Проекты".
+ */
+export default class ProjectsSwitcher {
+    constructor() {
+        this.switcherContainer = document.querySelector('.project-switcher');
+        
+        if (!this.switcherContainer) {
+            console.warn('Container for project switcher (.project-switcher) not found.');
+            return;
+        }
 
-document.addEventListener('DOMContentLoaded', () => {
-    const projectSwitcher = document.querySelector('.project-switcher');
-    
-    // Проверяем, есть ли переключатель проектов на странице
-    if (projectSwitcher) {
-        const radioInputs = projectSwitcher.querySelectorAll('input[name="project_filter"]');
-        const projectGroups = document.querySelectorAll('.project-group');
+        this.radioInputs = this.switcherContainer.querySelectorAll('input[name="project_filter"]');
+        this.projectGroups = document.querySelectorAll('.project-group');
 
-        const showTab = (value) => {
-            // Скрываем все группы
-            projectGroups.forEach(group => {
-                group.style.display = 'none';
-            });
+        this._setupListeners();
+        this._initializeView();
+    }
 
-            // Показываем нужную группу (например, group-ready)
-            const targetGroup = document.getElementById(`group-${value}`);
-            if (targetGroup) {
-                targetGroup.style.display = 'block';
-            }
-        };
-
-        // 1. Слушаем изменения в радио-кнопках
-        radioInputs.forEach(radio => {
-            radio.addEventListener('change', function() {
-                if (this.checked) {
-                    showTab(this.value);
+    /**
+     * Устанавливает слушатели событий на радио-кнопки.
+     * @private
+     */
+    _setupListeners() {
+        this.radioInputs.forEach(radio => {
+            radio.addEventListener('change', () => {
+                if (radio.checked) {
+                    this.showTab(radio.value);
                 }
             });
         });
+    }
 
-        // 2. Инициализация: Показываем группу, которая выбрана по умолчанию (checked)
-        const checkedRadio = projectSwitcher.querySelector('input[name="project_filter"]:checked');
-        if (checkedRadio) {
-            showTab(checkedRadio.value);
+    /**
+     * Показывает нужную вкладку и скрывает остальные.
+     * @param {string} value - Значение из атрибута value радио-кнопки ('ready', 'current', 'planned').
+     * @private
+     */
+    showTab(value) {
+        // 1. Скрываем все группы
+        this.projectGroups.forEach(group => {
+            group.style.display = 'none';
+        });
+
+        // 2. Показываем нужную группу
+        const targetGroup = document.getElementById(`group-${value}`);
+        if (targetGroup) {
+            targetGroup.style.display = 'block';
         }
     }
 
-    // ... (ваш существующий код для навигации, если вы его оставили)
-});
+    /**
+     * Устанавливает первоначальное состояние при загрузке (показывает активную по умолчанию).
+     * @private
+     */
+    _initializeView() {
+        const checkedRadio = this.switcherContainer.querySelector('input[name="project_filter"]:checked');
+        if (checkedRadio) {
+            this.showTab(checkedRadio.value);
+        }
+    }
+}
