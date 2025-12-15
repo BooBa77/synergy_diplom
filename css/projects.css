@@ -17,7 +17,8 @@
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 8px 8px 0 0;
-    background-color: #f0f0f0;
+    /*background-color: #f0f0f0;*/
+    background-color: var(--bg-secondary); /* согласно теме */
     border: 1px solid #ddd;
     border-bottom: none;
     transition: all 0.3s ease;
@@ -27,12 +28,14 @@
 
 /* Стили для неактивных вкладок (hover) */
 .project-switcher label:hover {
-    background-color: #e0e0e0;
+    /* background-color: #e0e0e0; */
+    background-color: var(--bg-tertiary); /* согласно теме */ 
 }
 
 /* Стили для АКТИВНОЙ вкладки (Checked Radio) */
 .project-switcher input[type="radio"]:checked + label {
-    background-color: white; /* Цвет фона, совпадающий с фоном секции */
+    /* background-color: white; /* Цвет фона, совпадающий с фоном секции */
+    background-color: var(--bg-primary); /* согласно теме */  
     color: var(--primary-color, #007bff);
     border-top: 3px solid var(--primary-color, #007bff); /* Выделение */
     border-color: #ddd;
@@ -43,9 +46,11 @@
 /* Стилизация контейнеров контента */
 .project-group {
     padding: 20px;
-    border: 1px solid #eee;
+    /* border: 1px solid #eee; */
+    border: 1px solid var(--border-color); /* согласно теме */ 
     border-radius: 0 8px 8px 8px;
-    background-color: white;
+    /* background-color: white; */
+    background-color: var(--bg-primary); /* согласно теме */ 
 }
 
 /* Показываем первую вкладку по умолчанию для Swiper */
@@ -81,11 +86,6 @@
     right: 0;
 }
 
-.swiper-button-prev:after,
-.swiper-button-next:after {
-    /* font-size: 1.2rem; */
-}
-
 .swiper-pagination {
     position: relative;
     margin-top: 1rem;
@@ -112,4 +112,30 @@
 
 .swiper-slide {
     height: auto;
+}
+
+/* Кастомные стрелки для Swiper */
+.swiper-button-prev:after,
+.swiper-button-next:after {
+    display: none;
+}
+
+.swiper-button-prev::before,
+.swiper-button-next::before {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    border-left: 3px solid var(--primary-color);
+    border-bottom: 3px solid var(--primary-color);
+    top: 50%;
+    left: 50%;
+}
+
+.swiper-button-prev::before {
+    transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.swiper-button-next::before {
+    transform: translate(-50%, -50%) rotate(-135deg);
 }
