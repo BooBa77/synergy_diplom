@@ -24,3 +24,6 @@
 
 /* 7. Раздел Projects */
 @import url('projects.css');
+
+/* 8. Github API */
+@import url('github.css');

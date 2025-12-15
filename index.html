@@ -57,21 +57,52 @@
             </p>
 
 
-            <!-- GitHub Activity Widget -->
-            <div class="github-activity">
-                <h3 class="github-activity__title">
-                    <i class="fab fa-github"></i> Моя активность на GitHub
+            <!-- GitHub Contributions Calendar -->
+            <div class="github-calendar">
+                <h3 class="github-calendar__title">
+                    <i class="fab fa-github"></i> Календарь контрибуций
                 </h3>
-                <div class="github-activity__container" id="github-activity">
-                    <div class="github-activity__loading">
-                        <i class="fas fa-spinner fa-spin"></i> Загружаю активность...
+                
+                <div class="github-calendar__header">
+                    <div class="github-calendar__legend">
+                        <span>Меньше</span>
+                        <div class="legend-levels">
+                            <div class="legend-level level-0"></div>
+                            <div class="legend-level level-1"></div>
+                            <div class="legend-level level-2"></div>
+                            <div class="legend-level level-3"></div>
+                            <div class="legend-level level-4"></div>
+                        </div>
+                        <span>Больше</span>
+                    </div>
+                    
+                    <div class="github-calendar__stats" id="github-stats">
+                        <div class="stat-item">
+                            <span class="stat-value">0</span>
+                            <span class="stat-label">контрибуций</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-value">0</span>
+                            <span class="stat-label">за последний год</span>
+                        </div>
                     </div>
                 </div>
-                <a href="https://github.com/BooBa77" target="_blank" class="github-activity__link">
-                    Посмотреть профиль на GitHub →
-                </a>
+                
+                <div class="github-calendar__container" id="github-calendar">
+                    <div class="github-calendar__loading">
+                        <i class="fas fa-spinner fa-spin"></i> Загружаю календарь...
+                    </div>
+                </div>
+                
+                <div class="github-calendar__footer">
+                    <a href="https://github.com/BooBa77" target="_blank" class="github-calendar__link">
+                        <i class="fab fa-github"></i> Посмотреть полный профиль на GitHub
+                    </a>
+                    <button class="github-calendar__refresh" id="refresh-calendar" title="Обновить">
+                        <i class="fas fa-redo"></i>
+                    </button>
+                </div>
             </div>
-
 
             <div class="hero__buttons">
                 <a href="#projects" class="btn btn--primary">Смотреть проекты</a>

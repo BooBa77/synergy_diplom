@@ -58,6 +58,12 @@
     display: block;
 }
 
+/* Остальные вкладки скрыты по умолчанию */
+#group-current,
+#group-planned {
+    display: none;
+}
+
 
 
 /* Стили Swiper */
