@@ -31,4 +31,7 @@ export default class ProjectsReadySlider {
             }
         });
     }
+
+    this.init();
+    window.projectsReadySlider = this;
 }

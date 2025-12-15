@@ -48,14 +48,68 @@
     background-color: white;
 }
 
-/* Скрываем все группы по умолчанию */
-.project-group {
-    display: none;
+/* Показываем первую вкладку по умолчанию для Swiper */
+#group-ready {
+    display: block;
 }
 
-/* Показываем только активную группу (та, чей input отмечен) */
-#group-ready:target,
-#group-current:target,
-#group-planned:target {
-    /* JS */
+
+
+/* Стили Swiper */
+.swiper {
+    overflow: visible;
+    padding: 0 40px;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: var(--primary-color);
+    background: var(--bg-primary);
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    box-shadow: var(--shadow-md);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.swiper-button-prev {
+    left: 0;
+}
+
+.swiper-button-next {
+    right: 0;
+}
+
+.swiper-button-prev:after,
+.swiper-button-next:after {
+    font-size: 1.2rem;
+}
+
+.swiper-pagination {
+    position: relative;
+    margin-top: 1rem;
+}
+
+.swiper-pagination-bullet {
+    background: var(--text-secondary);
+    opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+    background: var(--primary-color);
+    opacity: 1;
+}
+
+/* Стили для карточек проектов */
+.project-card {
+    background: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    border: 2px solid var(--border-color);
+    height: 100%;
+}
+
+.swiper-slide {
+    height: auto;
 }

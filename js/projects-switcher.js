@@ -1,63 +1,37 @@
-/**
- * Класс для управления переключением вкладок (радио-кнопок) 
- * в секции "Проекты".
- */
-export default class ProjectsSwitcher {
+// Инициализация слайдера готовых проектов
+import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
+
+export default class ProjectsReadySlider {
     constructor() {
-        this.switcherContainer = document.querySelector('.project-switcher');
+        this.container = document.querySelector('#group-ready .projects-slider');
         
-        if (!this.switcherContainer) {
-            console.warn('Container for project switcher (.project-switcher) not found.');
+        if (!this.container) {
+            console.warn('Слайдер готовых проектов не найден');
             return;
         }
-
-        this.radioInputs = this.switcherContainer.querySelectorAll('input[name="project_filter"]');
-        this.projectGroups = document.querySelectorAll('.project-group');
-
-        this._setupListeners();
-        this._initializeView();
+        
+        this.init();
+        
+        // Добавить глобальную ссылку для доступа из других файлов
+        window.projectsReadySlider = this;
     }
-
-    /**
-     * Устанавливает слушатели событий на радио-кнопки.
-     * @private
-     */
-    _setupListeners() {
-        this.radioInputs.forEach(radio => {
-            radio.addEventListener('change', () => {
-                if (radio.checked) {
-                    this.showTab(radio.value);
-                }
-            });
+    
+    init() {
+        this.swiper = new Swiper(this.container, {
+            slidesPerView: 1,
+            spaceBetween: 30,
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            breakpoints: {
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 }
+            }
         });
-    }
-
-    /**
-     * Показывает нужную вкладку и скрывает остальные.
-     * @param {string} value - Значение из атрибута value радио-кнопки ('ready', 'current', 'planned').
-     * @private
-     */
-    showTab(value) {
-        // 1. Скрываем все группы
-        this.projectGroups.forEach(group => {
-            group.style.display = 'none';
-        });
-
-        // 2. Показываем нужную группу
-        const targetGroup = document.getElementById(`group-${value}`);
-        if (targetGroup) {
-            targetGroup.style.display = 'block';
-        }
-    }
-
-    /**
-     * Устанавливает первоначальное состояние при загрузке (показывает активную по умолчанию).
-     * @private
-     */
-    _initializeView() {
-        const checkedRadio = this.switcherContainer.querySelector('input[name="project_filter"]:checked');
-        if (checkedRadio) {
-            this.showTab(checkedRadio.value);
-        }
     }
 }
