@@ -57,52 +57,24 @@
             </p>
 
 
-            <!-- GitHub Contributions Calendar -->
-            <div class="github-calendar">
-                <h3 class="github-calendar__title">
-                    <i class="fab fa-github"></i> Календарь контрибуций
+            <!-- Готовый GitHub календарь контрибуций -->
+            <div class="github-chart">
+                <h3 class="github-chart__title">
+                    <i class="fab fa-github"></i> Мои контрибуции на GitHub
                 </h3>
-                
-                <div class="github-calendar__header">
-                    <div class="github-calendar__legend">
-                        <span>Меньше</span>
-                        <div class="legend-levels">
-                            <div class="legend-level level-0"></div>
-                            <div class="legend-level level-1"></div>
-                            <div class="legend-level level-2"></div>
-                            <div class="legend-level level-3"></div>
-                            <div class="legend-level level-4"></div>
-                        </div>
-                        <span>Больше</span>
-                    </div>
-                    
-                    <div class="github-calendar__stats" id="github-stats">
-                        <div class="stat-item">
-                            <span class="stat-value">0</span>
-                            <span class="stat-label">контрибуций</span>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-value">0</span>
-                            <span class="stat-label">за последний год</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="github-calendar__container" id="github-calendar">
-                    <div class="github-calendar__loading">
-                        <i class="fas fa-spinner fa-spin"></i> Загружаю календарь...
-                    </div>
-                </div>
-                
-                <div class="github-calendar__footer">
-                    <a href="https://github.com/BooBa77" target="_blank" class="github-calendar__link">
-                        <i class="fab fa-github"></i> Посмотреть полный профиль на GitHub
+                <!-- Изображение графика контрибуций -->
+                <img class="github-chart__img"
+                    src="https://ghchart.rshah.org/0066CC/BooBa77"
+                    alt="График контрибуций пользователя BooBa77 на GitHub за последний год"
+                    loading="lazy">
+                <p class="github-chart__link">
+                    <a href="https://github.com/BooBa77" target="_blank">
+                        <i class="fab fa-github"></i> Перейти в мой профиль на GitHub
                     </a>
-                    <button class="github-calendar__refresh" id="refresh-calendar" title="Обновить">
-                        <i class="fas fa-redo"></i>
-                    </button>
-                </div>
+                </p>
             </div>
+
+
 
             <div class="hero__buttons">
                 <a href="#projects" class="btn btn--primary">Смотреть проекты</a>
