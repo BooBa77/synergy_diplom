@@ -11,6 +11,9 @@ export default class ProjectsReadySlider {
         }
         
         this.init();
+        
+        // Добавить глобальную ссылку для доступа из других файлов
+        window.projectsReadySlider = this;
     }
     
     init() {
@@ -31,7 +34,4 @@ export default class ProjectsReadySlider {
             }
         });
     }
-
-    this.init();
-    window.projectsReadySlider = this;
 }
