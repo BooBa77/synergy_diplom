@@ -4,7 +4,7 @@
     display: flex;
     gap: 5px;
     margin-bottom: 20px;
-    border-bottom: 2px solid #eee; /* Линия под вкладками */
+    border-bottom: 2px solid var(--border-color);
 }
 
 /* Скрываем стандартные радио-кнопки */
@@ -17,54 +17,42 @@
     padding: 10px 20px;
     cursor: pointer;
     border-radius: 8px 8px 0 0;
-    /*background-color: #f0f0f0;*/
-    background-color: var(--bg-secondary); /* согласно теме */
-    border: 1px solid #ddd;
+    background-color: var(--bg-secondary);
+    border: 1px solid var(--border-color);
     border-bottom: none;
     transition: all 0.3s ease;
     font-weight: 500;
-    color: #555;
+    color: var(--text-secondary);
 }
 
 /* Стили для неактивных вкладок (hover) */
 .project-switcher label:hover {
-    /* background-color: #e0e0e0; */
-    background-color: var(--bg-tertiary); /* согласно теме */ 
+    background-color: var(--bg-tertiary);
+    color: var(--text-primary);
 }
 
-/* Стили для АКТИВНОЙ вкладки (Checked Radio) */
+/* Стили для АКТИВНОЙ вкладки */
 .project-switcher input[type="radio"]:checked + label {
-    /* background-color: white; /* Цвет фона, совпадающий с фоном секции */
-    background-color: var(--bg-primary); /* согласно теме */  
-    color: var(--primary-color, #007bff);
-    border-top: 3px solid var(--primary-color, #007bff); /* Выделение */
-    border-color: #ddd;
-    border-bottom: 1px solid white; /* Стираем нижнюю границу, чтобы выглядело как "внутри" контейнера */
-    margin-top: -1px; /* Немного поднимаем, чтобы граница прилипла */
+    background-color: var(--bg-primary);
+    color: var(--primary-color);
+    border-top: 3px solid var(--primary-color);
+    border-bottom: 1px solid var(--bg-primary);
+    margin-top: -1px;
 }
 
 /* Стилизация контейнеров контента */
 .project-group {
     padding: 20px;
-    /* border: 1px solid #eee; */
-    border: 1px solid var(--border-color); /* согласно теме */ 
+    border: 1px solid var(--border-color);
     border-radius: 0 8px 8px 8px;
-    /* background-color: white; */
-    background-color: var(--bg-primary); /* согласно теме */ 
-}
-
-/* Показываем первую вкладку по умолчанию для Swiper */
-#group-ready {
-    display: block;
-}
-
-/* Остальные вкладки скрыты по умолчанию */
-#group-current,
-#group-planned {
+    background-color: var(--bg-primary);
     display: none;
 }
 
-
+/* Первая вкладка активна по умолчанию */
+#group-ready {
+    display: block;
+}
 
 /* Стили Swiper */
 .swiper {
