@@ -83,7 +83,7 @@
 
 .swiper-button-prev:after,
 .swiper-button-next:after {
-    font-size: 1.2rem;
+    /* font-size: 1.2rem; */
 }
 
 .swiper-pagination {

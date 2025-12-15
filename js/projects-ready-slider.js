@@ -27,10 +27,6 @@ export default class ProjectsReadySlider {
             pagination: {
                 el: '.swiper-pagination',
                 clickable: true,
-            },
-            breakpoints: {
-                768: { slidesPerView: 2 },
-                1024: { slidesPerView: 3 }
             }
         });
     }
