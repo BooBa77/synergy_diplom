@@ -253,7 +253,7 @@
 
 .screenshots-slider {
     overflow: hidden;
-    padding: 0 50px;
+    padding: 0 20px; /* Уменьшили отступы для 3 слайдов */
 }
 
 /* Контейнер для каждого скриншота */
@@ -276,19 +276,19 @@
 /* ОБРАБОТКА ВЕРТИКАЛЬНЫХ ИЗОБРАЖЕНИЙ */
 .screenshot-item img {
     width: 100%;
-    height: 320px; /* Фиксированная высота для вертикальных */
-    object-fit: contain; /* Вместо cover - показываем полностью без обрезки */
-    object-position: center top; /* Выравнивание по верхнему краю */
-    background-color: var(--bg-secondary); /* Фон вокруг изображения */
-    padding: 15px;
+    height: 280px; /* Немного уменьшили высоту для 3 слайдов */
+    object-fit: contain;
+    object-position: center top;
+    background-color: var(--bg-secondary);
+    padding: 10px;
     display: block;
 }
 
 /* Капшн под изображением */
 .screenshot-caption {
-    padding: 1rem;
+    padding: 0.75rem;
     margin: 0;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
     color: var(--text-secondary);
     text-align: center;
     background: var(--bg-secondary);
@@ -297,30 +297,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    min-height: 60px;
-}
-
-/* Адаптивность для вертикальных скриншотов */
-@media (max-width: 768px) {
-    .screenshot-item img {
-        height: 280px;
-        padding: 10px;
-    }
-    
-    .screenshots-slider {
-        padding: 0 40px;
-    }
-}
-
-@media (max-width: 480px) {
-    .screenshot-item img {
-        height: 240px;
-        padding: 8px;
-    }
-    
-    .screenshots-slider {
-        padding: 0 30px;
-    }
+    min-height: 50px;
 }
 
 /* Swiper навигация для карусели скриншотов */
@@ -330,11 +307,96 @@
 
 .screenshots-slider .swiper-button-prev,
 .screenshots-slider .swiper-button-next {
-    width: 40px;
-    height: 40px;
-    top: 35%; /* Сдвигаем выше, т.к. изображения вертикальные */
+    width: 36px;
+    height: 36px;
+    top: 40%;
+    background: var(--bg-primary);
+    border-radius: 50%;
+    box-shadow: var(--shadow-md);
+}
+
+.screenshots-slider .swiper-button-prev {
+    left: -5px;
+}
+
+.screenshots-slider .swiper-button-next {
+    right: -5px;
 }
 
 .screenshots-slider .swiper-pagination {
     margin-top: 0.75rem;
+}
+
+/* Скрываем кнопки навигации на очень маленьких экранах */
+@media (max-width: 640px) {
+    .screenshots-slider .swiper-button-prev,
+    .screenshots-slider .swiper-button-next {
+        display: none;
+    }
+    
+    .screenshots-slider {
+        padding: 0 10px;
+    }
+}
+
+/* АДАПТИВНОСТЬ ПО КОЛИЧЕСТВУ СЛАЙДОВ */
+@media (min-width: 1200px) {
+    /* На очень широких экранах - 3 слайда */
+    .screenshots-slider {
+        padding: 0 15px;
+    }
+    
+    .screenshot-item img {
+        height: 260px;
+    }
+    
+    .screenshots-slider .swiper-button-prev {
+        left: -10px;
+    }
+    
+    .screenshots-slider .swiper-button-next {
+        right: -10px;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    /* На средних широких - 2-3 слайда */
+    .screenshots-slider {
+        padding: 0 20px;
+    }
+    
+    .screenshot-item img {
+        height: 280px;
+    }
+}
+
+@media (max-width: 991px) {
+    /* На планшетах - 2 слайда */
+    .screenshot-item img {
+        height: 300px;
+    }
+}
+
+@media (max-width: 768px) {
+    /* На планшетах меньше - 1-2 слайда */
+    .screenshot-item img {
+        height: 280px;
+        padding: 8px;
+    }
+    
+    .screenshots-slider {
+        padding: 0 30px;
+    }
+}
+
+@media (max-width: 480px) {
+    /* На телефонах - 1 слайд */
+    .screenshot-item img {
+        height: 240px;
+        padding: 6px;
+    }
+    
+    .screenshots-slider {
+        padding: 0 20px;
+    }
 }
