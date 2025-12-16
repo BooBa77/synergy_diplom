@@ -237,7 +237,7 @@
     font-size: 1rem;
 }
 
-/* Карусель скриншотов */
+/* Карусель скриншотов - ВЕРТИКАЛЬНЫЕ ИЗОБРАЖЕНИЯ */
 .screenshots-carousel {
     margin-top: 2rem;
     padding-top: 1.5rem;
@@ -248,53 +248,93 @@
     font-size: 1.1rem;
     margin-bottom: 1rem;
     color: var(--text-primary);
+    text-align: center;
 }
 
 .screenshots-slider {
     overflow: hidden;
-    padding: 0 40px;
+    padding: 0 50px;
 }
 
+/* Контейнер для каждого скриншота */
 .screenshot-item {
     background: var(--bg-primary);
     border-radius: var(--border-radius);
     overflow: hidden;
     border: 1px solid var(--border-color);
     transition: transform var(--transition-fast);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .screenshot-item:hover {
-    transform: translateY(-3px);
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
 }
 
+/* ОБРАБОТКА ВЕРТИКАЛЬНЫХ ИЗОБРАЖЕНИЙ */
 .screenshot-item img {
     width: 100%;
-    height: 200px;
-    object-fit: cover;
+    height: 320px; /* Фиксированная высота для вертикальных */
+    object-fit: contain; /* Вместо cover - показываем полностью без обрезки */
+    object-position: center top; /* Выравнивание по верхнему краю */
+    background-color: var(--bg-secondary); /* Фон вокруг изображения */
+    padding: 15px;
     display: block;
 }
 
+/* Капшн под изображением */
 .screenshot-caption {
-    padding: 0.75rem;
+    padding: 1rem;
     margin: 0;
     font-size: 0.9rem;
     color: var(--text-secondary);
     text-align: center;
     background: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
 }
 
-/* Для Swiper внутри карусели */
+/* Адаптивность для вертикальных скриншотов */
+@media (max-width: 768px) {
+    .screenshot-item img {
+        height: 280px;
+        padding: 10px;
+    }
+    
+    .screenshots-slider {
+        padding: 0 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .screenshot-item img {
+        height: 240px;
+        padding: 8px;
+    }
+    
+    .screenshots-slider {
+        padding: 0 30px;
+    }
+}
+
+/* Swiper навигация для карусели скриншотов */
 .screenshots-slider .swiper-slide {
     height: auto;
 }
 
 .screenshots-slider .swiper-button-prev,
 .screenshots-slider .swiper-button-next {
-    width: 36px;
-    height: 36px;
-    top: 40%;
+    width: 40px;
+    height: 40px;
+    top: 35%; /* Сдвигаем выше, т.к. изображения вертикальные */
 }
 
 .screenshots-slider .swiper-pagination {
-    margin-top: 0.5rem;
+    margin-top: 0.75rem;
 }
