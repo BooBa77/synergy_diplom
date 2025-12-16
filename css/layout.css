@@ -2,44 +2,12 @@
    БАЗОВАЯ СЕТКА И СЕКЦИИ
    ====================== */
 
-/* Секции */
+/* Общие стили для всех секций */
 section {
     padding: 4rem 1rem;
 }
 
-.hero {
-    min-height: calc(100vh - var(--header-height));
-    display: flex;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-}
-
-/* Hero с фоном (будем настраивать позже) */
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: linear-gradient(135deg, var(--primary-light) 0%, transparent 70%);
-    opacity: 0.1;
-    z-index: -1;
-}
-
-.hero__content {
-    max-width: 600px;
-}
-
-.hero__buttons {
-    display: flex;
-    gap: 1rem;
-    margin-top: 2rem;
-    flex-wrap: wrap;
-}
-
-/* Навигация (базовые стили) */
+/* Навигация */
 .header {
     position: fixed;
     top: 0;
@@ -86,6 +54,21 @@ section {
     cursor: pointer;
 }
 
+.theme-toggle {
+    background: none;
+    border: none;
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: var(--border-radius);
+    transition: background-color var(--transition-fast);
+}
+
+.theme-toggle:hover {
+    background-color: var(--bg-secondary);
+}
+
 /* Адаптивность навигации */
 @media (max-width: 768px) {
     .nav__menu {
@@ -106,5 +89,9 @@ section {
     
     .nav__toggle {
         display: block;
+    }
+    
+    .nav {
+        padding: 0 1rem;
     }
 }

@@ -3,17 +3,17 @@
    Импорт всех стилей
    ====================== */
 
-/* 1. Сброс стилей */
+/* Сброс стилей */
 @import url('reset.css');
 
-/* 2. CSS-переменные */
+/* CSS-переменные */
 @import url('variables.css');
 
-/* 3. Базовые стили */
+/* Базовые стили */
 @import url('base.css');
 
-/* 4. Компоненты (добавим позже) */
-/* @import url('components/hero.css'); */
+/* Компоненты */
+@import url('components/hero.css');
 @import url('components/header.css');
 
 /* 5. Сетка и расположение */
