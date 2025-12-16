@@ -21,7 +21,7 @@
     bottom: 0;
     background-image: url('/synergy_diplom/images/hero-bg-light.png');
     background-size: cover;
-    background-position: center right;
+    background-position: top right;
     background-repeat: no-repeat;
     opacity: 0.15;
     z-index: -1;
