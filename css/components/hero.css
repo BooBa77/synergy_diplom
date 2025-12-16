@@ -19,7 +19,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('../../images/hero-bg-light.png');
+    background-image: url('/synergy_diplom/images/hero-bg-light.png');
     background-size: cover;
     background-position: center right;
     background-repeat: no-repeat;
@@ -47,7 +47,7 @@
 
 /* Фон для тёмной темы */
 [data-theme="dark"] .hero::before {
-    background-image: url('../../images/hero-bg-dark.png');
+    background-image: url('/synergy_diplom/images/hero-bg-dark.png');
     opacity: 0.2;
 }
 
