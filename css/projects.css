@@ -236,3 +236,65 @@
 .project-link i {
     font-size: 1rem;
 }
+
+/* Карусель скриншотов */
+.screenshots-carousel {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 2px solid var(--border-color);
+}
+
+.screenshots-carousel h4 {
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    color: var(--text-primary);
+}
+
+.screenshots-slider {
+    overflow: hidden;
+    padding: 0 40px;
+}
+
+.screenshot-item {
+    background: var(--bg-primary);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: transform var(--transition-fast);
+}
+
+.screenshot-item:hover {
+    transform: translateY(-3px);
+}
+
+.screenshot-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+}
+
+.screenshot-caption {
+    padding: 0.75rem;
+    margin: 0;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-align: center;
+    background: var(--bg-secondary);
+}
+
+/* Для Swiper внутри карусели */
+.screenshots-slider .swiper-slide {
+    height: auto;
+}
+
+.screenshots-slider .swiper-button-prev,
+.screenshots-slider .swiper-button-next {
+    width: 36px;
+    height: 36px;
+    top: 40%;
+}
+
+.screenshots-slider .swiper-pagination {
+    margin-top: 0.5rem;
+}
