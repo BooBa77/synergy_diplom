@@ -1,0 +1,31 @@
+/* ======================
+   ФУТЕР
+   ====================== */
+.footer {
+    background: var(--bg-dark);
+    color: var(--text-light);
+    padding: 2rem 0;
+    text-align: center;
+}
+
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.footer__social {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer__social a {
+    color: var(--text-light);
+    font-size: 1.2rem;
+    transition: color 0.3s ease;
+}
+
+.footer__social a:hover {
+    color: var(--accent-color);
+}

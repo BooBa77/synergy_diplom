@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Иванов Иван - Frontend-разработчик | Портфолио</title>
+    <title>Frontend-разработчик | Портфолио</title>
     <meta name="description" content="Портфолио начинающего frontend-разработчика. Адаптивная вёрстка, JavaScript, современные технологии.">
     
     <!-- Предзагрузка шрифтов (позже добавим) -->
@@ -447,21 +447,126 @@
         </div>
     </section>
 
-    <!-- Контакты (заглушка) -->
+    <!-- Контакты -->
     <section id="contact" class="contact">
-        <h2 class="section-title">Контакты</h2>
-        <!-- Форма и контакты позже -->
+        <div class="container">
+            <h2 class="section-title">Связаться со мной</h2>
+            
+            <div class="contacts-container">
+                <!-- Контактная информация слева -->
+                <div class="contact-info">
+                    <h3>Контактная информация</h3>
+                    <p>Готов к обсуждению проектов и сотрудничеству</p>
+                    
+                    <div class="contact-details">
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h4>Email</h4>
+                                <p>s.tregubov1977@gmail.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <div>
+                                <h4>Локация</h4>
+                                <p>Россия</p>
+                            </div>
+                        </div>
+                        
+                        <div class="social-links">
+                            <a href="https://github.com/BooBa77" target="_blank" class="social-link">
+                                <i class="fab fa-github"></i>
+                            </a>
+                            <a href="https://t.me/booba77" target="_blank" class="social-link">
+                                <i class="fab fa-telegram"></i>
+                            </a>
+                            <a href="https://vk.com/booba77" target="_blank" class="social-link">
+                                <i class="fab fa-vk"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Форма справа -->
+                <div class="contact-form-container">
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="name">Имя *</label>
+                            <input 
+                                type="text" 
+                                id="name" 
+                                name="name" 
+                                placeholder="Ваше имя"
+                                minlength="2"
+                                required
+                            >
+                            <div class="error-message" id="name-error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email *</label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                placeholder="your.email@example.com"
+                                required
+                            >
+                            <div class="error-message" id="email-error"></div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Сообщение *</label>
+                            <textarea 
+                                id="message" 
+                                name="message" 
+                                placeholder="Расскажите о вашем проекте или задайте вопрос..."
+                                rows="5"
+                                minlength="10"
+                                required
+                            ></textarea>
+                            <div class="error-message" id="message-error"></div>
+                        </div>
+                        
+                        <button type="submit" class="btn submit-btn" id="submit-btn">
+                            <span class="btn-text">Отправить сообщение</span>
+                            <div class="loader hidden" id="form-loader">
+                                <div class="spinner"></div>
+                            </div>
+                        </button>
+                        
+                        <div id="form-message" class="form-message hidden"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Футер -->
     <footer class="footer">
-        <p>&copy; 2025 Трегубов Сергей</p>
-        <div class="footer__social">
-            <!-- Иконки соцсетей позже -->
+        <div class="container">
+            <p>&copy; 2025 Трегубов Сергей. Frontend-разработчик</p>
+            <div class="footer__social">
+                <a href="https://github.com/BooBa77" target="_blank" aria-label="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://t.me/tregubov_irk" target="_blank" aria-label="Telegram">
+                    <i class="fab fa-telegram"></i>
+                </a>
+            </div>
         </div>
     </footer>
 
     <!-- JavaScript файлы -->
     <script type="module" src="js/main.js"></script>
+
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    
+    <!-- Форма обратной связи -->
+    <script src="js/email-form.js"></script>
+
 </body>
 </html>

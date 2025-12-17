@@ -16,14 +16,20 @@
 @import url('components/hero.css');
 @import url('components/header.css');
 
-/* 5. Сетка и расположение */
+/* Сетка и расположение */
 @import url('layout.css');
 
-/* 6. Раздел About */
+/* Раздел About */
 @import url('about.css');
 
-/* 7. Раздел Projects */
+/* Раздел Projects */
 @import url('projects.css');
 
-/* 8. Github API */
+/* Github API */
 @import url('github.css');
+
+/* Форма обратной связи */
+@import url('components/email-form.css');
+
+/* Подвал */
+@import url('components/footer.css');
