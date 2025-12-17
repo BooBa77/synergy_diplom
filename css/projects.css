@@ -237,166 +237,167 @@
     font-size: 1rem;
 }
 
-/* Карусель скриншотов - ВЕРТИКАЛЬНЫЕ ИЗОБРАЖЕНИЯ */
-.screenshots-carousel {
-    margin-top: 2rem;
-    padding-top: 1.5rem;
-    border-top: 2px solid var(--border-color);
-}
+{ /* Карусель скриншотов - ВЕРТИКАЛЬНЫЕ ИЗОБРАЖЕНИЯ */
+    .screenshots-carousel {
+        margin-top: 2rem;
+        padding-top: 1.5rem;
+        border-top: 2px solid var(--border-color);
+    }
 
-.screenshots-carousel h4 {
-    font-size: 1.1rem;
-    margin-bottom: 1rem;
-    color: var(--text-primary);
-    text-align: center;
-}
+    .screenshots-carousel h4 {
+        font-size: 1.1rem;
+        margin-bottom: 1rem;
+        color: var(--text-primary);
+        text-align: center;
+    }
 
-.screenshots-slider {
-    overflow: hidden;
-    padding: 0 20px; /* Уменьшили отступы для 3 слайдов */
-}
+    .screenshots-slider {
+        overflow: hidden;
+        padding: 0 20px; /* Уменьшили отступы для 3 слайдов */
+    }
 
-/* Контейнер для каждого скриншота */
-.screenshot-item {
-    background: var(--bg-primary);
-    border-radius: var(--border-radius);
-    overflow: hidden;
-    border: 1px solid var(--border-color);
-    transition: transform var(--transition-fast);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-}
+    /* Контейнер для каждого скриншота */
+    .screenshot-item {
+        background: var(--bg-primary);
+        border-radius: var(--border-radius);
+        overflow: hidden;
+        border: 1px solid var(--border-color);
+        transition: transform var(--transition-fast);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
 
-.screenshot-item:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-}
+    .screenshot-item:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+    }
 
-/* ОБРАБОТКА ВЕРТИКАЛЬНЫХ ИЗОБРАЖЕНИЙ */
-.screenshot-item img {
-    width: 100%;
-    height: 280px; /* Немного уменьшили высоту для 3 слайдов */
-    object-fit: contain;
-    object-position: center top;
-    background-color: var(--bg-secondary);
-    padding: 10px;
-    display: block;
-}
+    /* ОБРАБОТКА ВЕРТИКАЛЬНЫХ ИЗОБРАЖЕНИЙ */
+    .screenshot-item img {
+        width: 100%;
+        height: 280px; /* Немного уменьшили высоту для 3 слайдов */
+        object-fit: contain;
+        object-position: center top;
+        background-color: var(--bg-secondary);
+        padding: 10px;
+        display: block;
+    }
 
-/* Капшн под изображением */
-.screenshot-caption {
-    padding: 0.75rem;
-    margin: 0;
-    font-size: 0.85rem;
-    color: var(--text-secondary);
-    text-align: center;
-    background: var(--bg-secondary);
-    border-top: 1px solid var(--border-color);
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 50px;
-}
+    /* Капшн под изображением */
+    .screenshot-caption {
+        padding: 0.75rem;
+        margin: 0;
+        font-size: 0.85rem;
+        color: var(--text-secondary);
+        text-align: center;
+        background: var(--bg-secondary);
+        border-top: 1px solid var(--border-color);
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 50px;
+    }
 
-/* Swiper навигация для карусели скриншотов */
-.screenshots-slider .swiper-slide {
-    height: auto;
-}
+    /* Swiper навигация для карусели скриншотов */
+    .screenshots-slider .swiper-slide {
+        height: auto;
+    }
 
-.screenshots-slider .swiper-button-prev,
-.screenshots-slider .swiper-button-next {
-    width: 36px;
-    height: 36px;
-    top: 40%;
-    background: var(--bg-primary);
-    border-radius: 50%;
-    box-shadow: var(--shadow-md);
-}
-
-.screenshots-slider .swiper-button-prev {
-    left: -5px;
-}
-
-.screenshots-slider .swiper-button-next {
-    right: -5px;
-}
-
-.screenshots-slider .swiper-pagination {
-    margin-top: 0.75rem;
-}
-
-/* Скрываем кнопки навигации на очень маленьких экранах */
-@media (max-width: 640px) {
     .screenshots-slider .swiper-button-prev,
     .screenshots-slider .swiper-button-next {
-        display: none;
+        width: 36px;
+        height: 36px;
+        top: 40%;
+        background: var(--bg-primary);
+        border-radius: 50%;
+        box-shadow: var(--shadow-md);
     }
-    
-    .screenshots-slider {
-        padding: 0 10px;
-    }
-}
 
-/* АДАПТИВНОСТЬ ПО КОЛИЧЕСТВУ СЛАЙДОВ */
-@media (min-width: 1200px) {
-    /* На очень широких экранах - 3 слайда */
-    .screenshots-slider {
-        padding: 0 15px;
-    }
-    
-    .screenshot-item img {
-        height: 260px;
-    }
-    
     .screenshots-slider .swiper-button-prev {
-        left: -10px;
+        left: -5px;
     }
-    
+
     .screenshots-slider .swiper-button-next {
-        right: -10px;
+        right: -5px;
     }
-}
 
-@media (min-width: 992px) and (max-width: 1199px) {
-    /* На средних широких - 2-3 слайда */
-    .screenshots-slider {
-        padding: 0 20px;
+    .screenshots-slider .swiper-pagination {
+        margin-top: 0.75rem;
     }
-    
-    .screenshot-item img {
-        height: 280px;
-    }
-}
 
-@media (max-width: 991px) {
-    /* На планшетах - 2 слайда */
-    .screenshot-item img {
-        height: 300px;
+    /* Скрываем кнопки навигации на очень маленьких экранах */
+    @media (max-width: 640px) {
+        .screenshots-slider .swiper-button-prev,
+        .screenshots-slider .swiper-button-next {
+            display: none;
+        }
+        
+        .screenshots-slider {
+            padding: 0 10px;
+        }
     }
-}
 
-@media (max-width: 768px) {
-    /* На планшетах меньше - 1-2 слайда */
-    .screenshot-item img {
-        height: 280px;
-        padding: 8px;
+    /* АДАПТИВНОСТЬ ПО КОЛИЧЕСТВУ СЛАЙДОВ */
+    @media (min-width: 1200px) {
+        /* На широких экранах - 3 слайда */
+        .screenshots-slider {
+            padding: 0 15px;
+        }
+        
+        .screenshot-item img {
+            height: 260px;
+        }
+        
+        .screenshots-slider .swiper-button-prev {
+            left: -10px;
+        }
+        
+        .screenshots-slider .swiper-button-next {
+            right: -10px;
+        }
     }
-    
-    .screenshots-slider {
-        padding: 0 30px;
-    }
-}
 
-@media (max-width: 480px) {
-    /* На телефонах - 1 слайд */
-    .screenshot-item img {
-        height: 240px;
-        padding: 6px;
+    @media (min-width: 992px) and (max-width: 1199px) {
+        /* На средних широких - 2-3 слайда */
+        .screenshots-slider {
+            padding: 0 20px;
+        }
+        
+        .screenshot-item img {
+            height: 280px;
+        }
     }
-    
-    .screenshots-slider {
-        padding: 0 20px;
+
+    @media (max-width: 991px) {
+        /* На планшетах - 2 слайда */
+        .screenshot-item img {
+            height: 300px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        /* На планшетах меньше - 1-2 слайда */
+        .screenshot-item img {
+            height: 280px;
+            padding: 8px;
+        }
+        
+        .screenshots-slider {
+            padding: 0 30px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        /* На телефонах - 1 слайд */
+        .screenshot-item img {
+            height: 240px;
+            padding: 6px;
+        }
+        
+        .screenshots-slider {
+            padding: 0 20px;
+        }
     }
 }
