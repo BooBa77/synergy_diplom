@@ -8,7 +8,8 @@
     align-items: center;
     position: relative;
     overflow: hidden;
-    padding-left: 2rem; /* Отодвигаем от левой стенки */
+    padding-left: 0;
+    justify-content: center;
 }
 
 /* Фон для светлой темы (по умолчанию) */
@@ -59,7 +60,7 @@
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-lg);
     backdrop-filter: blur(4px);
-    margin-left: 3rem; /* Дополнительный отступ слева */
+    margin-left: 0;
 }
 
 /* Заголовки */
