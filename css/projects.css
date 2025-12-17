@@ -225,6 +225,8 @@
         text-decoration: none;
         font-weight: 500;
         transition: all var(--transition-fast);
+        max-width: 250px;
+        width: 100%;
     }
 
     .project-link:hover {
