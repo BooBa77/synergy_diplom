@@ -1,4 +1,4 @@
-{ /* --- Стили для переключателя проектов (Tabs) --- */
+/* --- Стили для переключателя проектов (Tabs) --- */
 
     .project-switcher {
         display: flex;
@@ -133,9 +133,9 @@
     .swiper-button-next::before {
         transform: translate(-50%, -50%) rotate(-135deg);
     }
-}
 
-{ /* Стили карточки проекта */
+
+/* Стили карточки проекта */
     .project-card {
         background: var(--bg-secondary);
         padding: 1.5rem;
@@ -237,9 +237,9 @@
     .project-link i {
         font-size: 1rem;
     }
-}
 
-{ /* Фоновые изображения для карточек выполненных проектов */
+
+/* Фоновые изображения для карточек выполненных проектов */
     .project-card {
         position: relative;
         background-color: var(--bg-secondary); /* Фолбэк цвет */
@@ -283,9 +283,9 @@
         opacity: 0.12;
     }
 
-}
 
-{ /* Карусель скриншотов - ВЕРТИКАЛЬНЫЕ ИЗОБРАЖЕНИЯ */
+
+/* Карусель скриншотов - ВЕРТИКАЛЬНЫЕ ИЗОБРАЖЕНИЯ */
     .screenshots-carousel {
         margin-top: 2rem;
         padding-top: 1.5rem;
@@ -448,4 +448,3 @@
             padding: 0 20px;
         }
     }
-}
