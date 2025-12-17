@@ -30,17 +30,6 @@ export default class ProjectsSlider {
                 el: this.pagination,
                 clickable: true,
             },
-
-            breakpoints: {
-                768: {
-                    slidesPerView: 1.5,
-                    spaceBetween: 20
-                },
-                1024: {
-                    slidesPerView: 2,
-                    spaceBetween: 30
-                }
-            }
         });
     }
 }
