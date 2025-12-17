@@ -255,10 +255,10 @@
         right: 0;
         bottom: 0;
         background-image: var(--project-bg); /* CSS переменная */
-        background-size: 150px; /* Размер фонового изображения */
+        /*background-size: 150px; /* Размер фонового изображения */
         background-position: bottom right; /* Позиция в правом нижнем углу */
         background-repeat: no-repeat;
-        opacity: 0.1; /* Полупрозрачность */
+        opacity: 0.8; /* Полупрозрачность */
         z-index: 0; /* Под основным контентом */
         transition: opacity var(--transition-normal);
     }
