@@ -32,11 +32,11 @@ export default class ProjectsCurrentCarousel {
                     spaceBetween: 20
                 },
                 992: {
-                    slidesPerView: 2,
+                    slidesPerView: 3,
                     spaceBetween: 25
                 },
                 1200: {
-                    slidesPerView: 3,
+                    slidesPerView: 4,
                     spaceBetween: 30
                 }
             },

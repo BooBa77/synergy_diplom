@@ -1,240 +1,288 @@
-/* --- Стили для переключателя проектов (Tabs) --- */
+{ /* --- Стили для переключателя проектов (Tabs) --- */
 
-.project-switcher {
-    display: flex;
-    gap: 5px;
-    margin-bottom: 20px;
-    border-bottom: 2px solid var(--border-color);
+    .project-switcher {
+        display: flex;
+        gap: 5px;
+        margin-bottom: 20px;
+        border-bottom: 2px solid var(--border-color);
+    }
+
+    /* Скрываем стандартные радио-кнопки */
+    .project-switcher input[type="radio"] {
+        display: none;
+    }
+
+    /* Стилизуем Лэйблы как кнопки/вкладки */
+    .project-switcher label {
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 8px 8px 0 0;
+        background-color: var(--bg-secondary);
+        border: 1px solid var(--border-color);
+        border-bottom: none;
+        transition: all 0.3s ease;
+        font-weight: 500;
+        color: var(--text-secondary);
+    }
+
+    /* Стили для неактивных вкладок (hover) */
+    .project-switcher label:hover {
+        background-color: var(--bg-tertiary);
+        color: var(--text-primary);
+    }
+
+    /* Стили для АКТИВНОЙ вкладки */
+    .project-switcher input[type="radio"]:checked + label {
+        background-color: var(--bg-primary);
+        color: var(--primary-color);
+        border-top: 3px solid var(--primary-color);
+        border-bottom: 1px solid var(--bg-primary);
+        margin-top: -1px;
+    }
+
+    /* Стилизация контейнеров контента */
+    .project-group {
+        padding: 20px;
+        border: 1px solid var(--border-color);
+        border-radius: 0 8px 8px 8px;
+        background-color: var(--bg-primary);
+        display: none;
+    }
+
+    /* Первая вкладка активна по умолчанию */
+    #group-ready {
+        display: block;
+    }
+
+    /* Стили Swiper */
+    .swiper {
+        overflow: visible;
+        padding: 0 40px;
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        color: var(--primary-color);
+        background: var(--bg-primary);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        box-shadow: var(--shadow-md);
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    .swiper-button-prev {
+        left: 0;
+    }
+
+    .swiper-button-next {
+        right: 0;
+    }
+
+    .swiper-pagination {
+        position: relative;
+        margin-top: 1rem;
+    }
+
+    .swiper-pagination-bullet {
+        background: var(--text-secondary);
+        opacity: 0.5;
+    }
+
+    .swiper-pagination-bullet-active {
+        background: var(--primary-color);
+        opacity: 1;
+    }
+
+    /* Стили для карточек проектов */
+    .project-card {
+        background: var(--bg-secondary);
+        padding: 1.5rem;
+        border-radius: var(--border-radius);
+        border: 2px solid var(--border-color);
+        height: 100%;
+    }
+
+    .swiper-slide {
+        height: auto;
+    }
+
+    /* Кастомные стрелки для Swiper */
+    .swiper-button-prev:after,
+    .swiper-button-next:after {
+        display: none;
+    }
+
+    .swiper-button-prev::before,
+    .swiper-button-next::before {
+        content: '';
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        border-left: 3px solid var(--primary-color);
+        border-bottom: 3px solid var(--primary-color);
+        top: 50%;
+        left: 50%;
+    }
+
+    .swiper-button-prev::before {
+        transform: translate(-50%, -50%) rotate(45deg);
+    }
+
+    .swiper-button-next::before {
+        transform: translate(-50%, -50%) rotate(-135deg);
+    }
 }
 
-/* Скрываем стандартные радио-кнопки */
-.project-switcher input[type="radio"] {
-    display: none;
+{ /* Стили карточки проекта */
+    .project-card {
+        background: var(--bg-secondary);
+        padding: 1.5rem;
+        border-radius: var(--border-radius);
+        border: 2px solid var(--border-color);
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        transition: transform var(--transition-fast), 
+                    box-shadow var(--transition-fast);
+    }
+
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: var(--shadow-lg);
+    }
+
+    .project-card__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid var(--primary-color);
+        padding-bottom: 0.5rem;
+    }
+
+    .project-card__title {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: var(--text-primary);
+        margin: 0;
+    }
+
+    .project-card__badge {
+        background: var(--primary-color);
+        color: white;
+        font-size: 0.75rem;
+        padding: 0.25rem 0.5rem;
+        border-radius: 12px;
+        font-weight: 600;
+    }
+
+    .project-card__description {
+        flex-grow: 1;
+        margin-bottom: 1.5rem;
+    }
+
+    .project-card__description p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: var(--text-secondary);
+        margin-bottom: 0.5rem;
+    }
+
+    .project-card__tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .tech-tag {
+        background: var(--bg-tertiary);
+        color: var(--text-secondary);
+        font-size: 0.8rem;
+        padding: 0.25rem 0.75rem;
+        border-radius: 15px;
+        border: 1px solid var(--border-color);
+        font-weight: 500;
+    }
+
+    .project-card__links {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+    }
+
+    .project-link {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem;
+        background: var(--bg-primary);
+        border-radius: var(--border-radius);
+        border: 1px solid var(--border-color);
+        color: var(--text-primary);
+        text-decoration: none;
+        font-weight: 500;
+        transition: all var(--transition-fast);
+    }
+
+    .project-link:hover {
+        background: var(--primary-color);
+        color: white;
+        border-color: var(--primary-color);
+        transform: translateX(3px);
+    }
+
+    .project-link i {
+        font-size: 1rem;
+    }
 }
 
-/* Стилизуем Лэйблы как кнопки/вкладки */
-.project-switcher label {
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 8px 8px 0 0;
-    background-color: var(--bg-secondary);
-    border: 1px solid var(--border-color);
-    border-bottom: none;
-    transition: all 0.3s ease;
-    font-weight: 500;
-    color: var(--text-secondary);
-}
+{ /* Фоновые изображения для карточек выполненных проектов */
+    .project-card {
+        position: relative;
+        background-color: var(--bg-secondary); /* Фолбэк цвет */
+        overflow: hidden; /* Чтобы фон не выходил за границы */
+    }
 
-/* Стили для неактивных вкладок (hover) */
-.project-switcher label:hover {
-    background-color: var(--bg-tertiary);
-    color: var(--text-primary);
-}
+    /* Псевдоэлемент для фона */
+    .project-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: var(--project-bg); /* CSS переменная */
+        background-size: 150px; /* Размер фонового изображения */
+        background-position: bottom right; /* Позиция в правом нижнем углу */
+        background-repeat: no-repeat;
+        opacity: 0.1; /* Полупрозрачность */
+        z-index: 0; /* Под основным контентом */
+        transition: opacity var(--transition-normal);
+    }
 
-/* Стили для АКТИВНОЙ вкладки */
-.project-switcher input[type="radio"]:checked + label {
-    background-color: var(--bg-primary);
-    color: var(--primary-color);
-    border-top: 3px solid var(--primary-color);
-    border-bottom: 1px solid var(--bg-primary);
-    margin-top: -1px;
-}
+    /* Контент карточки должен быть выше фона */
+    .project-card > * {
+        position: relative;
+        z-index: 1;
+    }
 
-/* Стилизация контейнеров контента */
-.project-group {
-    padding: 20px;
-    border: 1px solid var(--border-color);
-    border-radius: 0 8px 8px 8px;
-    background-color: var(--bg-primary);
-    display: none;
-}
+    /* При наведении фон становится чуть заметнее */
+    .project-card:hover::before {
+        opacity: 0.15;
+    }
 
-/* Первая вкладка активна по умолчанию */
-#group-ready {
-    display: block;
-}
+    /* Для тёмной темы */
+    [data-theme="dark"] .project-card::before {
+        opacity: 0.08;
+    }
 
-/* Стили Swiper */
-.swiper {
-    overflow: visible;
-    padding: 0 40px;
-}
+    [data-theme="dark"] .project-card:hover::before {
+        opacity: 0.12;
+    }
 
-.swiper-button-prev,
-.swiper-button-next {
-    color: var(--primary-color);
-    background: var(--bg-primary);
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    box-shadow: var(--shadow-md);
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.swiper-button-prev {
-    left: 0;
-}
-
-.swiper-button-next {
-    right: 0;
-}
-
-.swiper-pagination {
-    position: relative;
-    margin-top: 1rem;
-}
-
-.swiper-pagination-bullet {
-    background: var(--text-secondary);
-    opacity: 0.5;
-}
-
-.swiper-pagination-bullet-active {
-    background: var(--primary-color);
-    opacity: 1;
-}
-
-/* Стили для карточек проектов */
-.project-card {
-    background: var(--bg-secondary);
-    padding: 1.5rem;
-    border-radius: var(--border-radius);
-    border: 2px solid var(--border-color);
-    height: 100%;
-}
-
-.swiper-slide {
-    height: auto;
-}
-
-/* Кастомные стрелки для Swiper */
-.swiper-button-prev:after,
-.swiper-button-next:after {
-    display: none;
-}
-
-.swiper-button-prev::before,
-.swiper-button-next::before {
-    content: '';
-    position: absolute;
-    width: 12px;
-    height: 12px;
-    border-left: 3px solid var(--primary-color);
-    border-bottom: 3px solid var(--primary-color);
-    top: 50%;
-    left: 50%;
-}
-
-.swiper-button-prev::before {
-    transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.swiper-button-next::before {
-    transform: translate(-50%, -50%) rotate(-135deg);
-}
-
-/* Стили карточки проекта */
-.project-card {
-    background: var(--bg-secondary);
-    padding: 1.5rem;
-    border-radius: var(--border-radius);
-    border: 2px solid var(--border-color);
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    transition: transform var(--transition-fast), 
-                box-shadow var(--transition-fast);
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: var(--shadow-lg);
-}
-
-.project-card__header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 1rem;
-    border-bottom: 2px solid var(--primary-color);
-    padding-bottom: 0.5rem;
-}
-
-.project-card__title {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--text-primary);
-    margin: 0;
-}
-
-.project-card__badge {
-    background: var(--primary-color);
-    color: white;
-    font-size: 0.75rem;
-    padding: 0.25rem 0.5rem;
-    border-radius: 12px;
-    font-weight: 600;
-}
-
-.project-card__description {
-    flex-grow: 1;
-    margin-bottom: 1.5rem;
-}
-
-.project-card__description p {
-    font-size: 0.95rem;
-    line-height: 1.5;
-    color: var(--text-secondary);
-    margin-bottom: 0.5rem;
-}
-
-.project-card__tech {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-bottom: 1.5rem;
-}
-
-.tech-tag {
-    background: var(--bg-tertiary);
-    color: var(--text-secondary);
-    font-size: 0.8rem;
-    padding: 0.25rem 0.75rem;
-    border-radius: 15px;
-    border: 1px solid var(--border-color);
-    font-weight: 500;
-}
-
-.project-card__links {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-}
-
-.project-link {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    padding: 0.75rem;
-    background: var(--bg-primary);
-    border-radius: var(--border-radius);
-    border: 1px solid var(--border-color);
-    color: var(--text-primary);
-    text-decoration: none;
-    font-weight: 500;
-    transition: all var(--transition-fast);
-}
-
-.project-link:hover {
-    background: var(--primary-color);
-    color: white;
-    border-color: var(--primary-color);
-    transform: translateX(3px);
-}
-
-.project-link i {
-    font-size: 1rem;
 }
 
 { /* Карусель скриншотов - ВЕРТИКАЛЬНЫЕ ИЗОБРАЖЕНИЯ */
