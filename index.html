@@ -568,6 +568,36 @@
         </div>
     </footer>
 
+
+    <!-- Модальное окно для скриншотов -->
+    <div id="screenshot-modal" class="modal">
+        <div class="modal__overlay"></div>
+        <div class="modal__content">
+            <button class="modal__close" aria-label="Закрыть">
+                <i class="fas fa-times"></i>
+            </button>
+            
+            <div class="modal__image-container">
+                <img id="modal-image" src="" alt="" class="modal__image">
+                <div class="modal__navigation">
+                    <button class="modal__prev" aria-label="Предыдущее изображение">
+                        <i class="fas fa-chevron-left"></i>
+                    </button>
+                    <button class="modal__next" aria-label="Следующее изображение">
+                        <i class="fas fa-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <div class="modal__info">
+                <p id="modal-caption" class="modal__caption"></p>
+                <div class="modal__counter">
+                    <span id="modal-current">1</span> / <span id="modal-total">6</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- JavaScript файлы -->
     <script type="module" src="js/main.js"></script>
 
@@ -576,6 +606,9 @@
     
     <!-- Форма обратной связи -->
     <script src="js/email-form.js"></script>
+
+    <!-- Модалки для скриншотов -->
+    <script src="js/screenshot-modal.js"></script>
 
 </body>
 </html>

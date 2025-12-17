@@ -377,6 +377,26 @@
         margin-top: 0.75rem;
     }
 
+    /* Стили для кликабельных изображений в слайдере */
+    .screenshot-item {
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+
+    .screenshot-item:hover {
+        transform: scale(1.02);
+    }
+
+    .screenshot-item img {
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        transition: box-shadow 0.3s ease;
+    }
+
+    .screenshot-item:hover img {
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    }    
+
     /* Скрываем кнопки навигации на очень маленьких экранах */
     @media (max-width: 640px) {
         .screenshots-slider .swiper-button-prev,

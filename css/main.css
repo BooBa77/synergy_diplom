@@ -15,6 +15,7 @@
 /* Компоненты */
 @import url('components/hero.css');
 @import url('components/header.css');
+@import url('components/modal.css');
 
 /* Сетка и расположение */
 @import url('layout.css');
